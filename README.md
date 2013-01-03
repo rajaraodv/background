@@ -103,7 +103,7 @@ Checking background... OK
 If you look into the logs `vmc logs <appname> --all`, you'll see timestamp being printed every minute by workers running on each app instace.
 
 <p align='center'>
-<img src="https://github.com/rajaraodv/background/raw/master/pics/bgResult.png" height="4000px" width="350px" />
+<img src="https://github.com/rajaraodv/background/raw/master/pics/bgResult.png" height="400px" width="350px" />
 </p>
 
 ## General Notes ####

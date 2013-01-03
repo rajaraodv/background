@@ -98,9 +98,8 @@ Starting background... OK
 Checking background... OK
 ```
 
-***Result: ***
-
-If you look into the logs `vmc logs <appname> --all`, you'll see timestamp being printed every minute by workers running on each app instace.
+####Result:####
+If you look into the logs `vmc logs <appname> --all`, you'll see timestamp being printed every minute by workers running on each app instance.
 
 <p align='center'>
 <img src="https://github.com/rajaraodv/background/raw/master/pics/bgResult.png" height="400px" width="350px" />

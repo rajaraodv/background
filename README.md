@@ -28,7 +28,7 @@ new cronJob('* * * * *', function(){
 }, null, true, 'America/Los_Angeles');
 ```
 
-##Running it on Cloud Foundry ##
+##Running Standalone / background apps ##
 Running an app as a background / standalone app is very similar to running regular apps with the following exceptions.
 
 1. The framework should be `standalone`.
@@ -44,7 +44,7 @@ URL> 2  <---  Choose 'none' as we don't have a web-UI
 ```
 
 
-Putting it all togeather:
+##Running it on Cloud Foundry ##
 
 ```
 [~/success/git/background]
@@ -103,7 +103,7 @@ Checking background... OK
 If you look into the logs `vmc logs <appname> --all`, you'll see timestamp being printed every minute by workers running on each app instace.
 
 <p align='center'>
-<img src="https://github.com/rajaraodv/background/raw/master/pics/bgResult.png" height="400px" width="600px" />
+<img src="https://github.com/rajaraodv/background/raw/master/pics/bgResult.png" height="4000px" width="350px" />
 </p>
 
 ## General Notes ####

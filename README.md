@@ -1,6 +1,6 @@
 ### Background - A simple cron app showing Cloud Foundry's standalone or background apps feature ###
 
-This app once uploaded to Cloud Foundry as a background app, this simply prints timestamp every minute. You can run as many instances as you want as well.
+This app runs in the background and simply prints timestamp every minute. This app uses `cron` and `time` modules to schedule jobs and print timestamps.  To run this on Cloud Foundry, you must use `standalone` feature/framework (see down below).
 
 ```javascript
 //package.json
@@ -29,10 +29,9 @@ new cronJob('* * * * *', function(){
 ```
 
 ##Running Standalone / background apps ##
-Running an app as a background / standalone app is very similar to running regular apps with the following exceptions.
+Running an app as a standalone / background app is very similar to running regular apps with the following exceptions.
 
-1. The framework should be `standalone`.
-   * Sometimes `vmc` auto-recognizes the app as `node` or `ruby` or `java` etc. In that case, select `other` option and then select `standalone` option.
+1. The framework should be `standalone`. Sometimes `vmc` auto-recognizes the app as `node` or `ruby` or `java` etc. In that case, select `other` option and then select `standalone` option.
 
 2. You need to specify how to start the app (`Startup command> node app.js`)
 
@@ -109,5 +108,4 @@ If you look into the logs `vmc logs <appname> --all`, you'll see timestamp being
 * If you don't have Node.js, download it from <a href='http://nodejs.org' target='_blank'>here</a>
 * If you don't have a Cloud Foundry account, sign up for it <a href='https://my.cloudfoundry.com/signup' target='_blank'>here</a>
 * Check out Cloud Foundry getting started <a href='http://docs.cloudfoundry.com/getting-started.html' target='_blank'>here</a> & install `vmc` Ruby command line tool to push apps.
-
 * To install ***latest alpha or beta*** `vmc` tool run: `sudo gem install vmc ---pre`

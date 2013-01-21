@@ -1,12 +1,12 @@
-### Background - A simple cron app showing Cloud Foundry's standalone or background apps feature ###
+## Background - A simple cron app showing Cloud Foundry's standalone apps feature
 
-This app runs in the background and simply prints timestamp every minute. This app uses `cron` and `time` modules to schedule jobs and print timestamps.  To run this on Cloud Foundry, you must use `standalone` feature/framework (see down below).
+This app runs in the background and simply prints the timestamp to the log every minute. This app uses the `cron` and `time` modules to schedule jobs and print timestamps.  To run this on Cloud Foundry, you must use the `standalone` framework.
 
 ```javascript
 //package.json
 {
     "name":"background",
-    "description":"A simple cron app showing Cloud Foundry's standalone or background apps feature",
+    "description":"A simple cron app showing Cloud Foundry's standalone apps feature",
     "version":"0.0.1",
     "private":true,
     "scripts":{
@@ -28,10 +28,10 @@ new cronJob('* * * * *', function(){
 }, null, true, 'America/Los_Angeles');
 ```
 
-##Running Standalone / background apps ##
-Running an app as a standalone / background app is very similar to running regular apps with the following exceptions.
+## Running Standalone apps
+Running an app as `standalone` on Cloud Foundry is very similar to running regular apps, with the following exceptions.
 
-1. The framework should be `standalone`. Sometimes `vmc` auto-recognizes the app as `node` or `ruby` or `java` etc. In that case, select `other` option and then select `standalone` option.
+1. The framework should be `standalone`. Sometimes `vmc` auto-recognizes the app as `node` or `ruby` or `java` etc. In that case, select the `other` option and then select `standalone` option.
 
 2. You need to specify how to start the app (`Startup command> node app.js`)
 
@@ -43,7 +43,7 @@ URL> 2  <---  Choose 'none' as we don't have a web-UI
 ```
 
 
-##Running it on Cloud Foundry ##
+## Running this example on Cloud Foundry
 
 ```
 [~/success/git/background]
@@ -97,15 +97,20 @@ Starting background... OK
 Checking background... OK
 ```
 
-####Result:####
-If you look into the logs `vmc logs <appname> --all`, you'll see timestamp being printed every minute by workers running on each app instance.
+#### Result:
+If you look into the logs using the command `vmc logs <appname> --all`, you'll see the timestamp being printed every minute by workers running on each app instance.
 
 <p align='center'>
 <img src="https://github.com/rajaraodv/background/raw/master/pics/bgResult.png" height="400px" width="350px" />
 </p>
 
-## General Notes ####
+## General Notes
 * If you don't have Node.js, download it from <a href='http://nodejs.org' target='_blank'>here</a>
 * If you don't have a Cloud Foundry account, sign up for it <a href='https://my.cloudfoundry.com/signup' target='_blank'>here</a>
 * Check out Cloud Foundry getting started <a href='http://docs.cloudfoundry.com/getting-started.html' target='_blank'>here</a> & install `vmc` Ruby command line tool to push apps.
 * To install ***latest alpha or beta*** `vmc` tool run: `sudo gem install vmc ---pre`
+
+### Useful references
+* [node-cron](http://github.com/ncb000gt/node-cron)
+* [Running Standalone Apps on Cloud Foundry](http://www.slideshare.net/jencompgeek/thinking-outside-the-container-running-standalone-apps-on-cloud-foundry)
+
